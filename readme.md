@@ -4,6 +4,8 @@ A module for Garry's Mod that provides interfaces to interact with achievements 
 
 # Info
 
+USE THIS AT YOUR OWN DISCRETION. I WON'T BE HELD RESPONSIBLE FOR ANYONE ABUSING STEAM'S ACHIEVEMENTS. I DON'T CARE IF ANYONE DID SO DON'T BOTHER COMPLAINING TO ME. THIS IS SO SIMPLE TO DO SO SOD OFF.
+
 Mac was not tested at all (sorry but I'm poor).
 
 If stuff starts erroring or fails to work, be sure to check the correct line endings (\n and such) are present in the files for each OS.
