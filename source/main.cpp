@@ -2,7 +2,7 @@
 #include <cdll_int.h>
 #include <iachievementmgr.h>
 #include <cstdint>
-#include <interfaces.hpp>
+#include <GarrysMod/Interfaces.hpp>
 
 static SourceSDK::FactoryLoader engine_loader( "engine", false, false );
 
