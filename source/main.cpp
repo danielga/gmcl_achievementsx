@@ -1,10 +1,12 @@
 #include <GarrysMod/Lua/Interface.h>
+#include <GarrysMod/FactoryLoader.hpp>
+
+#include <cstdint>
+
 #include <cdll_int.h>
 #include <iachievementmgr.h>
-#include <cstdint>
-#include <GarrysMod/Interfaces.hpp>
 
-static SourceSDK::FactoryLoader engine_loader( "engine", false, false );
+static SourceSDK::FactoryLoader engine_loader( "engine" );
 
 static IAchievementMgr *achievements = nullptr;
 
@@ -64,11 +66,7 @@ LUA_FUNCTION_STATIC( Award )
 
 GMOD_MODULE_OPEN( )
 {
-	CreateInterfaceFn engine_factory = engine_loader.GetFactory( );
-	if( engine_factory == nullptr )
-		LUA->ThrowError( "unable to get engine factory" );
-
-	IVEngineClient *engine = static_cast<IVEngineClient *>( engine_factory( "VEngineClient015", nullptr ) );
+	IVEngineClient *engine = engine_loader.GetInterface<IVEngineClient>("VEngineClient015");
 	if( engine == nullptr )
 		LUA->ThrowError( "unable to initialize IVEngineClient" );
 
